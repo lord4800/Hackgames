@@ -13,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Shavron 1
+  - Shavron 2
+  - Shavron 3
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Disabled
+    uniqueID: 2717237445
+    locked: 0
+  - name: Enabled
+    uniqueID: 1719474013
     locked: 0
