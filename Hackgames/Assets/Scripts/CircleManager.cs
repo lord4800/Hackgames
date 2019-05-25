@@ -5,6 +5,15 @@ using UnityEngine;
 //TODO: Generate bonus collect items
 public class CircleManager : MonoBehaviour
 {
+    static private CircleManager instance;
+    static public CircleManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
     [SerializeField] private float circleTimerAnsver;
     [SerializeField] private float circleTimeBetween;
     [SerializeField] private AnimationCurve difficultCurve;
@@ -20,13 +29,19 @@ public class CircleManager : MonoBehaviour
         get
         {
             currentCircle = circlePool[Random.Range(0, circlePrefabs.Count)];
+            ScreenManager.Instance.Log(currentCircle.name);
             return currentCircle;
         }
     }
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
-        //InputManager.Instance.CircleCompleteEvent += OnCircleComplete;
+        InputManager.Instance.CircleCompleteEvent += OnCircleComplete;
         StartCoroutine(CircleGeneration());
         for (int i = 0; i < circlePrefabs.Count; i++)
         {
@@ -36,17 +51,22 @@ public class CircleManager : MonoBehaviour
         }
     }
 
-    void CircleActivate(GameObject circle)
-    {
-        Debug.Log(circle);
-        circle.SetActive(true);
-        ansverCorout = StartCoroutine(CircleReaction());
-    }
-
     IEnumerator CircleGeneration()
     {
         yield return new WaitForSeconds(circleTimerAnsver * difficultCurve.Evaluate(difficult));
         CircleActivate(Circle);
+    }
+
+    void CircleActivate(GameObject circle)
+    {
+        Debug.Log("Activate Circle");
+        circle.SetActive(true);
+    }
+
+    public void OnRaiseEnd()
+    {
+        Debug.Log("Rise Circle");
+        ansverCorout = StartCoroutine(CircleReaction());
     }
 
     IEnumerator CircleReaction()
@@ -55,26 +75,28 @@ public class CircleManager : MonoBehaviour
         //GameOver();
     }
 
-    private void GameOver()
-    {
-        CircleClose();
-        ScreenManager.Instance.GameOverShow();
-        GameManager.Instance.CurrentState = GameState.GameOver;
-    }
-
     public void OnCircleComplete()
     {
         if (GameManager.Instance.CurrentState != GameState.Game || ansverCorout == null)
             return;
-        Debug.Log("Circle Close");
+        Debug.Log("Circle Complete");
         StopCoroutine(ansverCorout);
         CircleClose();
         StartCoroutine(CircleGeneration());
     }
 
+    private void GameOver()
+    {
+        Debug.Log("GameOver");
+        CircleClose();
+        ScreenManager.Instance.GameOverShow();
+        GameManager.Instance.CurrentState = GameState.GameOver;
+    }
+
     private void CircleClose()
     {
+        ScreenManager.Instance.Log("");
         ansverCorout = null;
-        currentCircle.SetActive(false);
+        currentCircle.GetComponent<CircleAnimateProvider>().OnCircleComplit();
     }
 }
