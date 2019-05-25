@@ -14,6 +14,7 @@ public class ScreenManager : MonoBehaviour
         }
     }
     [SerializeField] private Text gameOverT;
+    [SerializeField] private Text debug;
 
     void Awake()
     {
@@ -28,5 +29,15 @@ public class ScreenManager : MonoBehaviour
     public void GameOverHide()
     {
         gameOverT.enabled = false;
+    }
+
+    private void Update()
+    {
+        debug.text = InputManager.Instance.rotateDevice.ToString();
+    }
+
+    private static Quaternion GyroToUnity(Quaternion q)
+    {
+        return new Quaternion(q.x, q.y, -q.z, -q.w);
     }
 }
