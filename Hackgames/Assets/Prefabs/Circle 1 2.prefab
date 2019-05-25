@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56170366588512927}
   m_LocalRotation: {x: -0, y: -0, z: -0.95578325, w: 0.2940721}
-  m_LocalPosition: {x: -1.7928158, y: 3.3310387, z: 0}
+  m_LocalPosition: {x: -1.83, y: 3.38, z: 0}
   m_LocalScale: {x: 0.7407408, y: 0.7407408, z: 0.74074084}
   m_Children: []
   m_Father: {fileID: 4706733049231491712}
@@ -420,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850406327248362726}
   m_LocalRotation: {x: -0, y: -0, z: 0.7226464, w: 0.69121796}
-  m_LocalPosition: {x: -3.7989175, y: -0.20253614, z: 0}
+  m_LocalPosition: {x: -3.89, y: -0.21, z: 0}
   m_LocalScale: {x: 0.7407406, y: 0.7407406, z: 0.74074084}
   m_Children: []
   m_Father: {fileID: 8788164824385012163}
@@ -736,7 +736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778221576878186225}
   m_LocalRotation: {x: -0, y: -0, z: -0.96598554, w: 0.25859624}
-  m_LocalPosition: {x: -1.79, y: 3.33, z: 0}
+  m_LocalPosition: {x: -1.827184, y: 3.3789608, z: 0}
   m_LocalScale: {x: 0.74074095, y: 0.74074095, z: 0.74074084}
   m_Children: []
   m_Father: {fileID: 8788164824385012163}
@@ -1289,7 +1289,7 @@ Transform:
   m_GameObject: {fileID: 4421449080663974549}
   m_LocalRotation: {x: 0, y: 0, z: 0.30070576, w: 0.953717}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_Children:
   - {fileID: 927653861510109758}
   - {fileID: 4504411222420249242}
@@ -2047,7 +2047,7 @@ Transform:
   m_GameObject: {fileID: 7038712877493722472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_Children:
   - {fileID: 3059944052748226962}
   - {fileID: 8927498729510655848}
@@ -2164,7 +2164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7319476768522931123}
   m_LocalRotation: {x: -0, y: -0, z: 0.7412255, w: 0.67125624}
-  m_LocalPosition: {x: -3.797374, y: -0.1983389, z: 0}
+  m_LocalPosition: {x: -3.8884568, y: -0.20580271, z: 0}
   m_LocalScale: {x: 0.7407408, y: 0.7407408, z: 0.74074084}
   m_Children: []
   m_Father: {fileID: 4706733049231491712}
@@ -2243,7 +2243,7 @@ Transform:
   m_GameObject: {fileID: 7598091442575179426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_Children:
   - {fileID: 2511927259645679308}
   - {fileID: 64247729199715345}
@@ -2363,7 +2363,7 @@ Transform:
   m_GameObject: {fileID: 7850497869646793486}
   m_LocalRotation: {x: 0, y: 0, z: 0.4227764, w: 0.906234}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_Children:
   - {fileID: 8788164824385012163}
   - {fileID: 4706733049231491712}
@@ -2408,7 +2408,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ed7f34cbde4638f4992a72f0925d1c51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a16916bb592a03f4bb877b0614814b5a, type: 3}
   m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2548,7 +2548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8413240461542386194}
   m_LocalRotation: {x: -0, y: -0, z: 0.13131967, w: 0.9913401}
-  m_LocalPosition: {x: -1.1900005, y: 3.5499997, z: 0}
+  m_LocalPosition: {x: -1.22, y: 3.65, z: 0}
   m_LocalScale: {x: 0.7407408, y: 0.7407408, z: 0.74074084}
   m_Children: []
   m_Father: {fileID: 4706733049231491712}
@@ -2785,7 +2785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9143005792296941641}
   m_LocalRotation: {x: -0, y: -0, z: 0.15656263, w: 0.98766804}
-  m_LocalPosition: {x: -1.2300001, y: 3.5300002, z: 0}
+  m_LocalPosition: {x: -1.2599998, y: 3.6300006, z: 0}
   m_LocalScale: {x: 0.7407409, y: 0.7407409, z: 0.74074084}
   m_Children: []
   m_Father: {fileID: 8788164824385012163}
