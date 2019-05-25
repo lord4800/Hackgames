@@ -31,11 +31,10 @@ public class ScreenManager : MonoBehaviour
         gameOverT.enabled = false;
     }
 
-    private void Update()
+    public void Log(string text)
     {
-        debug.text = InputManager.Instance.rotateDevice.ToString();
+        debug.text = text;
     }
-
     private static Quaternion GyroToUnity(Quaternion q)
     {
         return new Quaternion(q.x, q.y, -q.z, -q.w);

@@ -15,11 +15,13 @@ public class CircleAnimateProvider : MonoBehaviour
     {
         animator.ResetTrigger("End");
         //TODO: Circle stuff
+        CircleManager.Instance.OnRaiseEnd();
     }
 
     public void OnCircleComplit()
     {
-        animator.SetTrigger("End");
+        //animator.SetTrigger("End");
+        animator.Play("PathCircleEnd");
     }
 
     public void OnCircleEnd()
