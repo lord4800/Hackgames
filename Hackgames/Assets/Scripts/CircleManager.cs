@@ -26,7 +26,7 @@ public class CircleManager : MonoBehaviour
 
     void Start()
     {
-        InputManager.Instance.CircleCompleteEvent += OnCircleComplete;
+        //InputManager.Instance.CircleCompleteEvent += OnCircleComplete;
         StartCoroutine(CircleGeneration());
         for (int i = 0; i < circlePrefabs.Count; i++)
         {
@@ -52,6 +52,11 @@ public class CircleManager : MonoBehaviour
     IEnumerator CircleReaction()
     {
         yield return new WaitForSeconds(circleTimerAnsver * difficultCurve.Evaluate(difficult));
+        //GameOver();
+    }
+
+    private void GameOver()
+    {
         CircleClose();
         ScreenManager.Instance.GameOverShow();
         GameManager.Instance.CurrentState = GameState.GameOver;
