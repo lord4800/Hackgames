@@ -10,18 +10,25 @@ public class TimerManager : MonoBehaviour
     {
         if (timerPoints == null || timerPoints.Count <= 0)
         {
-
+            foreach (var item in GetComponentsInChildren<SpriteRenderer>())
+            {
+                timerPoints.Add(item);
+            }
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateTimer(float percent)
     {
-        
+        int timerCount = (int)(timerPoints.Count * percent);
+
+        for (int i = 0; i < timerPoints.Count; i++)
+        {
+            SpriteRenderer item = (SpriteRenderer)timerPoints[i];
+            if (i < timerCount)
+                item.enabled = true;
+            else
+                item.enabled = false;
+        }
     }
+    
 }
