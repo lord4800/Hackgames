@@ -25,7 +25,6 @@ public class ScreenManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        RestartGame();
     }
 
     public void RestartGame()
@@ -36,6 +35,7 @@ public class ScreenManager : MonoBehaviour
         restartButton.SetActive(false);
         gameOverT.enabled = false;
         topScore.enabled = false;
+        CircleManager.Instance.Restart();
     }
 
     public void GameOverShow()
@@ -43,7 +43,6 @@ public class ScreenManager : MonoBehaviour
         gameOverT.enabled = true;
         restartButton.SetActive(true);
         scoreT.text = "";
-        Debug.Log("Start");
 
         List<int> highScore = new List<int>();
         highScore.Add(score);
@@ -79,7 +78,7 @@ public class ScreenManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnCircleComplete();
+            CircleManager.Instance.DebugOnCircleComplete();
         }
     }
 
