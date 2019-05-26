@@ -78,7 +78,7 @@ public class ScreenManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnCircleComplete();
+            CircleManager.Instance.DebugOnCircleComplete();
         }
     }
 

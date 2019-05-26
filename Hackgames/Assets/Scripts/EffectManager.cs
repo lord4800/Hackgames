@@ -20,18 +20,19 @@ public class EffectManager : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         source = GetComponent<AudioSource>();
     }
 
     public void PlayGameOver()
     {
         source.clip = gameOver;
-        source.Play();
+        //source.Play();
     }
 
     public void PlayGateOpen()
     {
         source.clip = gameOver;
-        source.Play();
+        //source.Play();
     }
 }
