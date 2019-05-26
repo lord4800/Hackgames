@@ -79,6 +79,8 @@ public class CircleManager : MonoBehaviour
     {
         if (GameManager.Instance.CurrentState != GameState.Game || ansverCorout == null)
             return;
+        if (!currentCircle.GetComponent<CircleAnimateProvider>().CircleComplit)
+            return;
         Debug.Log("Circle Complete");
         StopCoroutine(ansverCorout);
         CircleClose();

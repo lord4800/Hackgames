@@ -3112,7 +3112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6819552797443991787
 Transform:
   m_ObjectHideFlags: 0
@@ -3225,6 +3225,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c3a2ef10a832a41a9802db0b78a0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activShevrons:
+  - {fileID: 316668292058535595}
+  - {fileID: 5246740903810639015}
+  - {fileID: 1465307001074913118}
+  - {fileID: 872654383591732247}
+  - {fileID: 6336999807492131155}
+  - {fileID: 4374263596681515518}
+  - {fileID: 577723543874760402}
+  - {fileID: 3981018643197294290}
 --- !u!1 &7145161889947878536
 GameObject:
   m_ObjectHideFlags: 0
