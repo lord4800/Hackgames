@@ -3844,7 +3844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7850497869646793484
 Transform:
   m_ObjectHideFlags: 0
@@ -4747,6 +4747,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7850497869646793484}
     m_Modifications:
+    - target: {fileID: 6994112050637411759, guid: faf2f8591d42fe548a56c2ee006c4670,
+        type: 3}
+      propertyPath: m_Name
+      value: TimerParent
+      objectReference: {fileID: 0}
     - target: {fileID: 6994112050637411758, guid: faf2f8591d42fe548a56c2ee006c4670,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4801,11 +4806,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6994112050637411759, guid: faf2f8591d42fe548a56c2ee006c4670,
-        type: 3}
-      propertyPath: m_Name
-      value: TimerParet
       objectReference: {fileID: 0}
     - target: {fileID: 4338183508667032775, guid: faf2f8591d42fe548a56c2ee006c4670,
         type: 3}
