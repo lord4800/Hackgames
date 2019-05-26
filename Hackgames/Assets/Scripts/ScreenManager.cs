@@ -17,6 +17,7 @@ public class ScreenManager : MonoBehaviour
     [SerializeField] private Text gameOverT;
     [SerializeField] private Text scoreT;
     [SerializeField] private Text topScore;
+    [SerializeField] private GameObject restartButton;
     [SerializeField] private Text debug;
 
     private int score;
@@ -31,17 +32,28 @@ public class ScreenManager : MonoBehaviour
     {
         score = 0;
         scoreT.text = "";
+
+        restartButton.SetActive(false);
+        gameOverT.enabled = false;
+        topScore.enabled = false;
     }
 
     public void GameOverShow()
     {
         gameOverT.enabled = true;
+        restartButton.SetActive(true);
+        scoreT.text = "";
+        Debug.Log("Start");
+
         List<int> highScore = new List<int>();
         highScore.Add(score);
-        highScore.Add(PlayerPrefs.GetInt("TopScore1"));
-        highScore.Add(PlayerPrefs.GetInt("TopScore2"));
-        highScore.Add(PlayerPrefs.GetInt("TopScore3"));
+        highScore.Add(PlayerPrefs.GetInt("TopScore1",0));
+        highScore.Add(PlayerPrefs.GetInt("TopScore2",0));
+        highScore.Add(PlayerPrefs.GetInt("TopScore3",0));
+        
         highScore.Sort();
+        highScore.Reverse();
+        
         PlayerPrefs.SetInt("TopScore1", highScore[0]);
         PlayerPrefs.SetInt("TopScore2", highScore[1]);
         PlayerPrefs.SetInt("TopScore3", highScore[2]);
@@ -62,7 +74,16 @@ public class ScreenManager : MonoBehaviour
     {
         debug.text = text;
     }
+#if UNITY_EDITOR
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnCircleComplete();
+        }
+    }
 
+#endif
     public void OnCircleComplete()
     {
         score += SCORE_INCREMENT;
