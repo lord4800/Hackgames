@@ -25,7 +25,6 @@ public class ScreenManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        RestartGame();
     }
 
     public void RestartGame()
@@ -36,6 +35,8 @@ public class ScreenManager : MonoBehaviour
         restartButton.SetActive(false);
         gameOverT.enabled = false;
         topScore.enabled = false;
+        Debug.Log("Restart click");
+        CircleManager.Instance.Restart();
     }
 
     public void GameOverShow()

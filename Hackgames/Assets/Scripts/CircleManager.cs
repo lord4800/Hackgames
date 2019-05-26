@@ -51,9 +51,15 @@ public class CircleManager : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        Debug.Log("Call Circle");
+        StartCoroutine(CircleGeneration());
+    }
+
     IEnumerator CircleGeneration()
     {
-        yield return new WaitForSeconds(circleTimerAnsver * difficultCurve.Evaluate(difficult));
+        yield return new WaitForSeconds(circleTimeBetween * difficultCurve.Evaluate(difficult));
         CircleActivate(Circle);
     }
 
