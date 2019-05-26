@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO: Generate bonus collect items
 public class CircleManager : MonoBehaviour
 {
     static private CircleManager instance;
@@ -53,7 +52,7 @@ public class CircleManager : MonoBehaviour
 
     public void Restart()
     {
-        Debug.Log("Call Circle");
+        GameManager.Instance.CurrentState = GameState.Game;
         StartCoroutine(CircleGeneration());
     }
 
@@ -65,13 +64,11 @@ public class CircleManager : MonoBehaviour
 
     void CircleActivate(GameObject circle)
     {
-        Debug.Log("Activate Circle");
         circle.SetActive(true);
     }
 
     public void OnRaiseEnd()
     {
-        Debug.Log("Rise Circle");
         ansverCorout = StartCoroutine(CircleReaction());
     }
 
@@ -97,7 +94,8 @@ public class CircleManager : MonoBehaviour
             return;
         if (!currentCircle.GetComponent<CircleAnimateProvider>().CircleComplit)
             return;
-        Debug.Log("Circle Complete");
+        EffectManager.Instance.PlayGateOpen();
+        ParticleManager.Instance.PlayWarp();
         ScreenManager.Instance.OnCircleComplete();
         StopCoroutine(ansverCorout);
         CircleClose();
@@ -106,8 +104,8 @@ public class CircleManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("GameOver");
         CircleClose();
+        EffectManager.Instance.PlayGameOver();
         ScreenManager.Instance.GameOverShow();
         GameManager.Instance.CurrentState = GameState.GameOver;
     }

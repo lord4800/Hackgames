@@ -35,7 +35,6 @@ public class ScreenManager : MonoBehaviour
         restartButton.SetActive(false);
         gameOverT.enabled = false;
         topScore.enabled = false;
-        Debug.Log("Restart click");
         CircleManager.Instance.Restart();
     }
 
@@ -44,7 +43,6 @@ public class ScreenManager : MonoBehaviour
         gameOverT.enabled = true;
         restartButton.SetActive(true);
         scoreT.text = "";
-        Debug.Log("Start");
 
         List<int> highScore = new List<int>();
         highScore.Add(score);

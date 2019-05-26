@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6704797195957833100}
   - component: {fileID: 86858738561046960}
   - component: {fileID: 401891637}
+  - component: {fileID: 8134146121983032305}
   m_Layer: 0
   m_Name: ParticleSystemWrap
   m_TagString: Untagged
@@ -4772,3 +4773,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8134146121983032305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3243864283493996651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8020bdd50d721dc41847ce26d231d1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
