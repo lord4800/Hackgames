@@ -69,9 +69,19 @@ public class CircleManager : MonoBehaviour
         ansverCorout = StartCoroutine(CircleReaction());
     }
 
+    private void Update()
+    {
+        difficult += Time.deltaTime;
+    }
+
     IEnumerator CircleReaction()
     {
-        yield return new WaitForSeconds(circleTimerAnsver * difficultCurve.Evaluate(difficult));
+        float timer = circleTimerAnsver * difficultCurve.Evaluate(difficult);
+        for (float t = 0; t < timer; t += Time.deltaTime)
+        {
+            currentCircle.GetComponentInChildren<TimerManager>().UpdateTimer(1-t/timer);
+            yield return null;
+        }
         GameOver();
     }
 
