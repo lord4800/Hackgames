@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aaea444a3c5de64381f28b91e9388a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleTimerAnsver: 3
+  circleTimerAnsver: 15
   circleTimeBetween: 5
   difficultCurve:
     serializedVersion: 2
@@ -72,8 +72,13 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   circlePrefabs:
-  - {fileID: 7782794688181986178, guid: 4d693df938ec3834d893c416b015faa0, type: 3}
-  - {fileID: 7782794688181986178, guid: 4d693df938ec3834d893c416b015faa0, type: 3}
+  - {fileID: 5918953357977857961, guid: 5fa65a939739e0e41b5ac192d2c23fe4, type: 3}
+  - {fileID: 3112801753165774203, guid: 7460fc41f45e66146873e56f1e57187f, type: 3}
+  - {fileID: 7850497869646793486, guid: 5ece3a40f4012a64da2f75504701dcdb, type: 3}
+  - {fileID: 4738243015375980535, guid: 54f1b1917ec5dae4fbab568f54dc8652, type: 3}
+  - {fileID: 6819552797443991785, guid: 9eff9944a6b97b64ab41f2720376b712, type: 3}
+  - {fileID: 3509771250288551058, guid: 0e89063b19b4b8341b54a7462b43e152, type: 3}
+  - {fileID: 7456334203540430549, guid: 9edb09ae23830e442a7398d90ffda32f, type: 3}
 --- !u!114 &2653779515761384984
 MonoBehaviour:
   m_ObjectHideFlags: 0

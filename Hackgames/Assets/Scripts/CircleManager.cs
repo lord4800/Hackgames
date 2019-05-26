@@ -72,7 +72,7 @@ public class CircleManager : MonoBehaviour
     IEnumerator CircleReaction()
     {
         yield return new WaitForSeconds(circleTimerAnsver * difficultCurve.Evaluate(difficult));
-        //GameOver();
+        GameOver();
     }
 
     public void OnCircleComplete()
@@ -82,6 +82,7 @@ public class CircleManager : MonoBehaviour
         if (!currentCircle.GetComponent<CircleAnimateProvider>().CircleComplit)
             return;
         Debug.Log("Circle Complete");
+        ScreenManager.Instance.OnCircleComplete();
         StopCoroutine(ansverCorout);
         CircleClose();
         StartCoroutine(CircleGeneration());

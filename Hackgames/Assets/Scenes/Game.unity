@@ -607,51 +607,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
         type: 3}
-      propertyPath: circlePrefabs.Array.size
-      value: 7
+      propertyPath: difficultCurve.m_PostInfinity
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: circlePrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 5918953357977857961, guid: 5fa65a939739e0e41b5ac192d2c23fe4,
-        type: 3}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: circlePrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 3112801753165774203, guid: 7460fc41f45e66146873e56f1e57187f,
-        type: 3}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: circlePrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 7850497869646793486, guid: 5ece3a40f4012a64da2f75504701dcdb,
-        type: 3}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: circlePrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 4738243015375980535, guid: 54f1b1917ec5dae4fbab568f54dc8652,
-        type: 3}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: circlePrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 6819552797443991785, guid: 9eff9944a6b97b64ab41f2720376b712,
-        type: 3}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: circlePrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 3509771250288551058, guid: 0e89063b19b4b8341b54a7462b43e152,
-        type: 3}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: circlePrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 7456334203540430549, guid: 9edb09ae23830e442a7398d90ffda32f,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f77c830618aac3548ac5cfe0e4009ebe, type: 3}
 --- !u!1001 &3171043985718663186
@@ -840,15 +798,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4518020271143401347, guid: 3c527c799f5735943a43f84784793cf0,
+    - target: {fileID: 4518020270929496571, guid: 3c527c799f5735943a43f84784793cf0,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4518020271143401349, guid: 3c527c799f5735943a43f84784793cf0,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 100
+    - target: {fileID: 1578821956, guid: 3c527c799f5735943a43f84784793cf0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c527c799f5735943a43f84784793cf0, type: 3}
