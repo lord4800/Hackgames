@@ -5,6 +5,8 @@ using UnityEngine;
 public class CircleAnimateProvider : MonoBehaviour
 {
     private Animator animator;
+    [SerializeField] private List<SpriteRenderer> activShevrons = new List<SpriteRenderer>();
+
 
     private void Awake()
     {
@@ -20,12 +22,25 @@ public class CircleAnimateProvider : MonoBehaviour
 
     public void OnCircleComplit()
     {
-        //animator.SetTrigger("End");
         animator.Play("PathCircleEnd");
     }
 
     public void OnCircleEnd()
     {
         this.gameObject.SetActive(false);
+    }
+
+    public bool CircleComplit
+    {
+        get
+        {
+            foreach (var item in activShevrons)
+            {
+                if(item.enabled == false)
+                    return false;
+                Debug.Log(item.enabled);
+            }
+            return true;
+        }
     }
 }

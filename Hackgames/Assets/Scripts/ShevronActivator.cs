@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShevronActivator : MonoBehaviour
 {
     SpriteRenderer Renderer;
-    bool Enabled;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +19,8 @@ public class ShevronActivator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log("OnTriggerEnter");
+
         if (collision.gameObject.layer == this.gameObject.layer)
         {
             if (Renderer != null)
@@ -37,7 +38,7 @@ public class ShevronActivator : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("ColliderEnter");
+        //Debug.Log("ColliderEnter");
 
     }
 }

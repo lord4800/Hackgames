@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ScreenManager : MonoBehaviour
 {
+    private const int SCORE_INCREMENT = 15;
     static private ScreenManager instance;
     static public ScreenManager Instance
     {
@@ -14,16 +15,42 @@ public class ScreenManager : MonoBehaviour
         }
     }
     [SerializeField] private Text gameOverT;
+    [SerializeField] private Text scoreT;
+    [SerializeField] private Text topScore;
     [SerializeField] private Text debug;
+
+    private int score;
 
     void Awake()
     {
         instance = this;
+        RestartGame();
+    }
+
+    public void RestartGame()
+    {
+        score = 0;
+        scoreT.text = "";
     }
 
     public void GameOverShow()
     {
         gameOverT.enabled = true;
+        List<int> highScore = new List<int>();
+        highScore.Add(score);
+        highScore.Add(PlayerPrefs.GetInt("TopScore1"));
+        highScore.Add(PlayerPrefs.GetInt("TopScore2"));
+        highScore.Add(PlayerPrefs.GetInt("TopScore3"));
+        highScore.Sort();
+        PlayerPrefs.SetInt("TopScore1", highScore[0]);
+        PlayerPrefs.SetInt("TopScore2", highScore[1]);
+        PlayerPrefs.SetInt("TopScore3", highScore[2]);
+
+        topScore.text = "TOP SCORE \n" +
+            "1."+ highScore[0] + "\n" +
+            "2." + highScore[1] + "\n" +
+            "3." + highScore[2];
+        topScore.enabled = true;
     }
 
     public void GameOverHide()
@@ -35,6 +62,13 @@ public class ScreenManager : MonoBehaviour
     {
         debug.text = text;
     }
+
+    public void OnCircleComplete()
+    {
+        score += SCORE_INCREMENT;
+        scoreT.text = score.ToString();
+    }
+
     private static Quaternion GyroToUnity(Quaternion q)
     {
         return new Quaternion(q.x, q.y, -q.z, -q.w);
