@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aaea444a3c5de64381f28b91e9388a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleTimerAnsver: 15
-  circleTimeBetween: 5
+  circleTimerAnsver: 10
+  circleTimeBetween: 2
   difficultCurve:
     serializedVersion: 2
     m_Curve:
@@ -103,4 +103,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc7fe3f960f5d24097fe6006740ee84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isflat: 0
