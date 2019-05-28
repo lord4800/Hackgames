@@ -2034,7 +2034,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3834379150700908862}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9659258, w: 0.2588191}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_Children:
@@ -2048,7 +2048,7 @@ Transform:
   - {fileID: 1133332623156081395}
   m_Father: {fileID: 3509771250288551056}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -150}
 --- !u!1 &4166855755478688815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,7 +2216,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4461145823231275764}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9659258, w: 0.2588191}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_Children:
@@ -2230,7 +2230,7 @@ Transform:
   - {fileID: 7266137360644167991}
   m_Father: {fileID: 3509771250288551056}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -150}
 --- !u!1 &4524529429189002624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,7 +3511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf4abbd4f93fec4b8f71a73a5ff1a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeManager: {fileID: 8752223634664782371}
 --- !u!1 &7076215562216838307
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,15 +4820,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7738251589153208457}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8752223634664782371 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1303211361021248170, guid: faf2f8591d42fe548a56c2ee006c4670,
-    type: 3}
-  m_PrefabInstance: {fileID: 7738251589153208457}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb18c6a11f772444839aeb0216a6d86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
