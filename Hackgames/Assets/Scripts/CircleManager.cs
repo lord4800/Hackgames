@@ -58,16 +58,14 @@ public class CircleManager : MonoBehaviour
 
     IEnumerator CircleGeneration()
     {
-
         float waitTimer = circleTimeBetween * difficultCurve.Evaluate(difficult);
-        Debug.Log(waitTimer);
         yield return new WaitForSeconds(waitTimer);
         CircleActivate(Circle);
     }
 
     void CircleActivate(GameObject circle)
     {
-        currentCircle.GetComponent<Circle>().TimeManager.UpdateTimer(1);
+        currentCircle.GetComponent<CircleAnimateProvider>().TimeManager.UpdateTimer(1);
         circle.SetActive(true);
     }
 

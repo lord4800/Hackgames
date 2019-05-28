@@ -7,10 +7,20 @@ public class CircleAnimateProvider : MonoBehaviour
     private Animator animator;
     [SerializeField] private List<SpriteRenderer> activShevrons = new List<SpriteRenderer>();
 
+    private TimerManager timeManager;
+    public TimerManager TimeManager    {
+        get
+        {
+            if (timeManager == null)
+                timeManager = GetComponentInChildren<TimerManager>();
+            return timeManager;
+        }
+    }
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        timeManager = GetComponentInChildren<TimerManager>();
     }
 
     public void OnRiseEnd()
