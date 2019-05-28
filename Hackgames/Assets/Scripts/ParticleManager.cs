@@ -14,6 +14,7 @@ public class ParticleManager : MonoBehaviour
     }
 
     private Animator animator;
+    public Animator cameraAnim;
 
     private void Awake()
     {
@@ -24,5 +25,6 @@ public class ParticleManager : MonoBehaviour
     public void PlayWarp()
     {
         animator.Play("WarpUpAnimation");
+        cameraAnim.Play("WarpAnimationCamera");
     }
 }
