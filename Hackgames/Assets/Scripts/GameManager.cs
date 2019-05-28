@@ -21,7 +21,27 @@ public class GameManager : MonoBehaviour
         }
         set
         {
+            if (value == GameState.GameOver)
+            {
+                EffectManager.Instance.PlayGameOver();
+                ScreenManager.Instance.GameOverShow();
+            }
             gameState = value;
+        }
+    }
+
+    private CircleManager circleGenerator;
+
+    public CircleManager CircleGenerator
+    {
+        get
+        {
+            return circleGenerator;
+        }
+
+        set
+        {
+            circleGenerator = value;
         }
     }
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +14,9 @@ public class ScreenManager : MonoBehaviour
             return instance;
         }
     }
+
+    public Action RestartEvent;
+
     [SerializeField] private Text gameOverT;
     [SerializeField] private Text scoreT;
     [SerializeField] private Text topScore;
@@ -35,7 +38,8 @@ public class ScreenManager : MonoBehaviour
         restartButton.SetActive(false);
         gameOverT.enabled = false;
         topScore.enabled = false;
-        CircleManager.Instance.Restart();
+        if (RestartEvent != null)
+            RestartEvent();
     }
 
     public void GameOverShow()
@@ -78,7 +82,7 @@ public class ScreenManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CircleManager.Instance.DebugOnCircleComplete();
+            GameManager.Instance.CircleGenerator.DebugOnCircleComplete();
         }
     }
 

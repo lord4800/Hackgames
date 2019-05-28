@@ -8,11 +8,13 @@ public class Circle : MonoBehaviour
     const float EPSILON = 3f;
 
     private Vector3 targerVec;
-    public TimerManager TimerManager;
+    public TimerManager TimeManager;
 
     private void Awake()
     {
-        TimerManager = GetComponentInChildren<TimerManager>();
+
+        if (TimeManager == null)
+        TimeManager = GetComponentInChildren<TimerManager>();
     }
     // Update is called once per frame
     void FixedUpdate()

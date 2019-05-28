@@ -17,7 +17,7 @@ public class CircleAnimateProvider : MonoBehaviour
     {
         animator.ResetTrigger("End");
         //TODO: Circle stuff
-        CircleManager.Instance.OnRaiseEnd();
+        GameManager.Instance.CircleGenerator.OnRaiseEnd();
     }
 
     public void OnCircleComplit()
@@ -38,7 +38,6 @@ public class CircleAnimateProvider : MonoBehaviour
             {
                 if(item.enabled == false)
                     return false;
-                Debug.Log(item.enabled);
             }
             return true;
         }

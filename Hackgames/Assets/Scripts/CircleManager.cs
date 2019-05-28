@@ -1,18 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CircleManager : MonoBehaviour
-{
-    static private CircleManager instance;
-    static public CircleManager Instance
-    {
-        get
-        {
-            return instance;
-        }
-    }
-
+{ 
     [SerializeField] private float circleTimerAnsver;
     [SerializeField] private float circleTimeBetween;
     [SerializeField] private AnimationCurve difficultCurve;
@@ -23,24 +15,30 @@ public class CircleManager : MonoBehaviour
     private List<GameObject> circlePool = new List<GameObject>();
     private GameObject currentCircle;
 
+    public Action CircleCompleteEvent;
+
     private GameObject Circle
     {
         get
         {
-            currentCircle = circlePool[Random.Range(0, circlePrefabs.Count)];
+            List<GameObject> pool = new List<GameObject>(circlePool);
+            pool.Remove(currentCircle);
+            currentCircle = pool[UnityEngine.Random.Range(0, pool.Count)];
             ScreenManager.Instance.Log(currentCircle.name);
             return currentCircle;
         }
     }
 
-    private void Awake()
-    {
-        instance = this;
-    }
-
     void Start()
     {
+        GameManager.Instance.CircleGenerator = this;
+
+        CircleCompleteEvent += EffectManager.Instance.PlayGateOpen;
+        CircleCompleteEvent += ParticleManager.Instance.PlayWarp;
+        CircleCompleteEvent += ScreenManager.Instance.OnCircleComplete;
+
         InputManager.Instance.CircleCompleteEvent += OnCircleComplete;
+        ScreenManager.Instance.RestartEvent += Restart;
         StartCoroutine(CircleGeneration());
         for (int i = 0; i < circlePrefabs.Count; i++)
         {
@@ -56,21 +54,21 @@ public class CircleManager : MonoBehaviour
         StartCoroutine(CircleGeneration());
         difficult = 0f;
     }
-    float timerBetweenCircle;
+
+
     IEnumerator CircleGeneration()
     {
-        float waitTimer = Mathf.Clamp(timerBetweenCircle, circleTimeBetween * difficultCurve.Evaluate(difficult), timerBetweenCircle);
-        timerBetweenCircle = circleTimeBetween * difficultCurve.Evaluate(difficult);
-        
+
+        float waitTimer = circleTimeBetween * difficultCurve.Evaluate(difficult);
+        Debug.Log(waitTimer);
         yield return new WaitForSeconds(waitTimer);
         CircleActivate(Circle);
     }
 
     void CircleActivate(GameObject circle)
     {
+        currentCircle.GetComponent<Circle>().TimeManager.UpdateTimer(1);
         circle.SetActive(true);
-        if (currentCircle.GetComponent<Circle>() != null)
-        currentCircle.GetComponent<Circle>().TimerManager.UpdateTimer(1);
     }
 
     public void OnRaiseEnd()
@@ -100,19 +98,18 @@ public class CircleManager : MonoBehaviour
             return;
         if (!currentCircle.GetComponent<CircleAnimateProvider>().CircleComplit)
             return;
-        EffectManager.Instance.PlayGateOpen();
-        ParticleManager.Instance.PlayWarp();
-        ScreenManager.Instance.OnCircleComplete();
-        StopCoroutine(ansverCorout);
+        if (CircleCompleteEvent != null)
+            CircleCompleteEvent();
+
+        StopAllCoroutines();
         CircleClose();
         StartCoroutine(CircleGeneration());
     }
 
     public void DebugOnCircleComplete()
     {
-        EffectManager.Instance.PlayGateOpen();
-        ParticleManager.Instance.PlayWarp();
-        ScreenManager.Instance.OnCircleComplete();
+        if (CircleCompleteEvent != null)
+            CircleCompleteEvent();
 
         StopAllCoroutines();
         CircleClose();
@@ -122,8 +119,7 @@ public class CircleManager : MonoBehaviour
     private void GameOver()
     {
         CircleClose();
-        EffectManager.Instance.PlayGameOver();
-        ScreenManager.Instance.GameOverShow();
+        
         GameManager.Instance.CurrentState = GameState.GameOver;
     }
 
