@@ -844,33 +844,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
         type: 3}
-      propertyPath: difficultCurve.m_PostInfinity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: circleTimerAnsver
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
       propertyPath: difficultCurve.m_Curve.Array.data[1].time
-      value: 1800
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: difficultCurve.m_Curve.Array.data[0].inSlope
-      value: -0.0015312737
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: difficultCurve.m_Curve.Array.data[0].outSlope
-      value: -0.0015312737
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653779515761384982, guid: f77c830618aac3548ac5cfe0e4009ebe,
-        type: 3}
-      propertyPath: difficultCurve.m_Curve.Array.data[0].outWeight
-      value: 0.06785315
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f77c830618aac3548ac5cfe0e4009ebe, type: 3}
