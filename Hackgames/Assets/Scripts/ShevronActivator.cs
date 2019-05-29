@@ -11,12 +11,6 @@ public class ShevronActivator : MonoBehaviour
         Renderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("OnTriggerEnter");
@@ -27,6 +21,7 @@ public class ShevronActivator : MonoBehaviour
                 Renderer.enabled = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer == this.gameObject.layer)
@@ -34,11 +29,5 @@ public class ShevronActivator : MonoBehaviour
             if (Renderer != null)
                 Renderer.enabled = false;
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Debug.Log("ColliderEnter");
-
     }
 }
