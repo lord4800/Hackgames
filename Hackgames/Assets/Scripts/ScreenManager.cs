@@ -15,6 +15,7 @@ public class ScreenManager : MonoBehaviour
         }
     }
 
+    public int Score;
     public Action RestartEvent;
 
     [SerializeField] private Text gameOverT;
@@ -23,7 +24,6 @@ public class ScreenManager : MonoBehaviour
     [SerializeField] private GameObject restartButton;
     [SerializeField] private Text debug;
 
-    private int score;
 
     void Awake()
     {
@@ -32,7 +32,7 @@ public class ScreenManager : MonoBehaviour
 
     public void RestartGame()
     {
-        score = 0;
+        Score = 0;
         scoreT.text = "";
 
         restartButton.SetActive(false);
@@ -49,7 +49,7 @@ public class ScreenManager : MonoBehaviour
         scoreT.text = "";
 
         List<int> highScore = new List<int>();
-        highScore.Add(score);
+        highScore.Add(Score);
         highScore.Add(PlayerPrefs.GetInt("TopScore1",0));
         highScore.Add(PlayerPrefs.GetInt("TopScore2",0));
         highScore.Add(PlayerPrefs.GetInt("TopScore3",0));
@@ -62,9 +62,9 @@ public class ScreenManager : MonoBehaviour
         PlayerPrefs.SetInt("TopScore3", highScore[2]);
 
         topScore.text = "TOP SCORE \n" +
-            "1."+ highScore[0] + "\n" +
-            "2." + highScore[1] + "\n" +
-            "3." + highScore[2];
+            "1. "+ highScore[0] + "\n" +
+            "2. " + highScore[1] + "\n" +
+            "3. " + highScore[2];
         topScore.enabled = true;
     }
 
@@ -77,6 +77,7 @@ public class ScreenManager : MonoBehaviour
     {
         debug.text = text;
     }
+    
 #if UNITY_EDITOR
     public void Update()
     {
@@ -89,8 +90,8 @@ public class ScreenManager : MonoBehaviour
 #endif
     public void OnCircleComplete()
     {
-        score += SCORE_INCREMENT;
-        scoreT.text = score.ToString();
+        Score += SCORE_INCREMENT;
+        scoreT.text = Score.ToString();
     }
 
     private static Quaternion GyroToUnity(Quaternion q)

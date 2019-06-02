@@ -17,22 +17,26 @@ public class EffectManager : MonoBehaviour
     [SerializeField] private AudioClip gateOpen;
 
     private AudioSource source;
+    private AudioSource[] audios;
 
     private void Awake()
     {
         instance = this;
         source = GetComponent<AudioSource>();
+        audios = GetComponents<AudioSource>();
     }
 
     public void PlayGameOver()
     {
         source.clip = gameOver;
-        //source.Play();
+        source.Play();
+        //audios[1].Play();
     }
 
     public void PlayGateOpen()
     {
-        source.clip = gameOver;
-        //source.Play();
+        source.clip = gateOpen;
+        source.Play();
+        //audios[0].Play();
     }
 }

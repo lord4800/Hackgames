@@ -10,6 +10,7 @@ public class CircleManager : MonoBehaviour
     [SerializeField] private AnimationCurve difficultCurve;
     [SerializeField] private List<GameObject> circlePrefabs = new List<GameObject>();
 
+    private int previousAngle;
     private float difficult;
     private Coroutine ansverCorout;
     private List<GameObject> circlePool = new List<GameObject>();
@@ -25,6 +26,10 @@ public class CircleManager : MonoBehaviour
             pool.Remove(currentCircle);
             currentCircle = pool[UnityEngine.Random.Range(0, pool.Count)];
             ScreenManager.Instance.Log(currentCircle.name);
+
+            // Random circle active group angle setting
+            int angle = GenerateRandomAngle(-70, 70);
+            currentCircle.transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0, angle);
             return currentCircle;
         }
     }
@@ -46,6 +51,8 @@ public class CircleManager : MonoBehaviour
             circle.SetActive(false);
             circlePool.Add(Instantiate(circle));
         }
+
+        previousAngle = 0;
     }
 
     public void Restart()
@@ -54,7 +61,6 @@ public class CircleManager : MonoBehaviour
         StartCoroutine(CircleGeneration());
         difficult = 0f;
     }
-
 
     IEnumerator CircleGeneration()
     {
@@ -126,5 +132,19 @@ public class CircleManager : MonoBehaviour
         ScreenManager.Instance.Log("");
         ansverCorout = null;
         currentCircle.GetComponent<CircleAnimateProvider>().OnCircleComplit();
+    }
+
+    private int GenerateRandomAngle(int min, int max)
+    {
+        int angle;
+        do
+        {
+            angle = UnityEngine.Random.Range(min, max + 1);
+        }
+        while (Math.Abs(previousAngle - angle) < 30);
+        previousAngle = angle;
+        //Debug.Log(previousAngle);
+        return angle;
+
     }
 }
